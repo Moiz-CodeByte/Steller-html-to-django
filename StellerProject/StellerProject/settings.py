@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-4oj#w9td2=2)#m#cellpxr-bt41zd+jsj#lp90%i-vm9u(kzls
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['steller-django.vercel.app']
+ALLOWED_HOSTS = ['steller-django.vercel.app', 'steller-django-bqdxp3w25-abdul-moizs-projects-aaf06eae.vercel.app' , '.vercel.app' ]
 
 
 # Application definition
@@ -115,7 +115,12 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
-STATIC_URL = 'static/'
+
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # folder where Django collects static
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, '/stellerapp/static'),  # where you keep your static before collecting
+]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
