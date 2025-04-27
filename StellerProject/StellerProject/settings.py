@@ -41,6 +41,7 @@ INSTALLED_APPS = [
 ]
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -115,12 +116,16 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
-
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # folder where Django collects static
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+# Where Django looks for static files before collecting
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'stellerapp/static'),  # where you keep your static before collecting
+    os.path.join(BASE_DIR, 'stellerapp/static'),
 ]
+
+# Enable WhiteNoise's GZip
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
