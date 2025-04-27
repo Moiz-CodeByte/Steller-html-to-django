@@ -4,6 +4,13 @@
     {
       "src": "StellerProject/wsgi.py",
       "use": "@vercel/python"
+    },
+    {
+      "src": "build_staticfiles.sh",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "staticfiles"
+      }
     }
   ],
   "routes": [
