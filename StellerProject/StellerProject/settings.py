@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-4oj#w9td2=2)#m#cellpxr-bt41zd+jsj#lp90%i-vm9u(kzls'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['steller-django.vercel.app', 'steller-django-bqdxp3w25-abdul-moizs-projects-aaf06eae.vercel.app' , '.vercel.app' ]
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'steller-django.vercel.app', 'steller-django-bqdxp3w25-abdul-moizs-projects-aaf06eae.vercel.app' , '.vercel.app' ]
 
 
 # Application definition
@@ -55,7 +55,7 @@ ROOT_URLCONF = 'StellerProject.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['templates'],
+        'DIRS': [os.path.join(BASE_DIR, 'stellerapp/templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
