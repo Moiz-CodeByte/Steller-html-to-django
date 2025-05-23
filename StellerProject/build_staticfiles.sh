@@ -7,10 +7,13 @@ ls -la
 # Install dependencies
 pip install -r requirements.txt
 
+# Create staticfiles directory if it doesn't exist
+mkdir -p staticfiles
+
 # Run collectstatic with noinput flag and verbosity
 python manage.py collectstatic --noinput --verbosity 2
 
 # Show contents of staticfiles directory
 echo "Contents of staticfiles directory:"
 ls -la staticfiles/
-ls -la staticfiles/css/ 
+ls -la staticfiles/imgs/ 
