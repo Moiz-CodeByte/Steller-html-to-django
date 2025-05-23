@@ -4,9 +4,6 @@
 echo "Current directory: $(pwd)"
 ls -la
 
-# Change to the correct directory
-cd /vercel/path0
-
 # Use the correct Python path in Vercel
 export PATH="/opt/python/3.9.16/bin:$PATH"
 
@@ -17,6 +14,7 @@ python3 -m pip install -r requirements.txt
 mkdir -p staticfiles
 
 # Run collectstatic with noinput flag and verbosity
+cd /vercel/path0/StellerProject
 python3 manage.py collectstatic --noinput --verbosity 2
 
 # Set proper permissions for static files
@@ -27,6 +25,5 @@ echo "Contents of staticfiles directory:"
 ls -la staticfiles/
 ls -la staticfiles/imgs/
 
-# Verify static files are accessible
-echo "Testing static file access..."
-curl -I http://localhost:8000/static/imgs/logo.svg 
+# Remove the curl test since we're in a build environment
+echo "Static files collection completed" 
