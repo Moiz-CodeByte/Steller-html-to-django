@@ -4,6 +4,9 @@
 echo "Current directory: $(pwd)"
 ls -la
 
+# Change to the correct directory
+cd /vercel/path0
+
 # Use the correct Python path in Vercel
 export PATH="/opt/python/3.9.16/bin:$PATH"
 

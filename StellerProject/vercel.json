@@ -13,7 +13,7 @@
       "use": "@vercel/static-build",
       "config": {
         "distDir": "staticfiles",
-        "buildCommand": "chmod +x build_staticfiles.sh && ./build_staticfiles.sh"
+        "buildCommand": "cd /vercel/path0 && chmod +x build_staticfiles.sh && ./build_staticfiles.sh"
       }
     }
   ],
