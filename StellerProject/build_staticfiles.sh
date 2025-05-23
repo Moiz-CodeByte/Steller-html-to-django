@@ -4,14 +4,17 @@
 echo "Current directory: $(pwd)"
 ls -la
 
+# Use the correct Python path in Vercel
+export PATH="/opt/python/3.9.16/bin:$PATH"
+
 # Install dependencies
-pip install -r requirements.txt
+python3 -m pip install -r requirements.txt
 
 # Create staticfiles directory if it doesn't exist
 mkdir -p staticfiles
 
 # Run collectstatic with noinput flag and verbosity
-python manage.py collectstatic --noinput --verbosity 2
+python3 manage.py collectstatic --noinput --verbosity 2
 
 # Set proper permissions for static files
 chmod -R 755 staticfiles

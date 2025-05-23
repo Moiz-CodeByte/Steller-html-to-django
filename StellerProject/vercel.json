@@ -3,13 +3,17 @@
   "builds": [
     {
       "src": "StellerProject/wsgi.py",
-      "use": "@vercel/python"
+      "use": "@vercel/python",
+      "config": {
+        "runtime": "python3.9"
+      }
     },
     {
       "src": "build_staticfiles.sh",
       "use": "@vercel/static-build",
       "config": {
-        "distDir": "staticfiles"
+        "distDir": "staticfiles",
+        "buildCommand": "chmod +x build_staticfiles.sh && ./build_staticfiles.sh"
       }
     }
   ],
